@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#startx mocp
+rm /home/gulver/.moc/pid
+mocp -S &
+mocp -p &
+mocp -P &
+# state fifo file script for panel
+/home/gulver/.fifo
+
+# create fifo file for pulse audio
+#mkfifo /tmp/alsa.fifo   
+
+rm /tmp/bspwm:0-socket
