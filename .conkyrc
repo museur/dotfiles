@@ -1,0 +1,11 @@
+out_to_console yes
+out_to_x no
+background no
+update_interval 1
+total_run_times 0
+use_spacer none
+double_buffer yes
+
+TEXT
+
+^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/note1.xbm) ^fg(\#DE9764)${if_running mocp}${texeci 10 mocp -Q "%t"}¡ ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/phones1.xbm) ^fg(\#DE9764)%${exec  pamixer --get-volume} ^fg(\#D1DEE3) ^i(/home/gulver/.config/bspwm/panel/icons/disk.xbm) ^fg(\#DE9764)${fs_free /home}  ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/mem1.xbm) ^fg(\#DE9764)%${memperc}  ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/cpu.xbm) ^fg(\#DE9764)%${cpu cpu0} ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/temp0.xbm) ^fg(\#DE9764)${acpitemp}°C  ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/bat2.xbm) ^fg(\#DE9764)%${battery_percent BAT0}  ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/wifi_02.xbm) ^fg(\#DE9764)%${wireless_link_qual_perc wlo1}  ^fg(\#D1DEE3)^i(/home/gulver/.config/bspwm/panel/icons/cal1.xbm) ^fg(\#DE9764)${time %a %b %d}^fg(\#D1DEE3)  ^i(/home/gulver/.config/bspwm/panel/icons/clock1.xbm) ^fg(\#DE9764)${time %T} 

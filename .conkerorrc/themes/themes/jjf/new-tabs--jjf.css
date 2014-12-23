@@ -1,0 +1,10 @@
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.tab2 {
+  margin-right: 1px;
+}
+
+#tab2-bar autorepeatbutton {
+  display: none;
+}

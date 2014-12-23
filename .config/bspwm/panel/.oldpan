@@ -1,0 +1,9 @@
+!!#!/bin/sh
+
+FG='#D14A1D'
+BG='#232323'
+FONT='-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*'
+
+conky | dzen2 -e - -h '20' -w '1366'  -ta r -fg $FG -bg $BG -fn $FONT &
+
+

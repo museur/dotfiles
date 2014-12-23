@@ -1,0 +1,108 @@
+# Toggle panels
+alt ctrl + q
+	{pkill panel; pkill cat; pkill conky; bspc config top_padding 0 ,\
+	bspc config top_padding 14; $HOME/.config/bspwm/panel/panel & }
+
+# make sxhkd reload its configuration files:
+alt + shift + r
+	pkill -USR1 -x sxhkd
+
+alt + q
+	bspc window --close
+
+alt + b
+	bspc desktop --balance
+
+# Workstation Monitor
+alt + w
+	bspc monitor -f next
+
+alt + f
+	bspc window --toggle fullscreen
+
+#make bigger
+shift +  {Left,Down,Up,Right}
+	bspc window -e {left -10,down +10,up -10,right +10}
+#make lesser
+shift + alt + {Left,Right,Up,Down}
+	bspc window -e {right -10,left +10,down -10,up +10}
+
+~button1
+	bspc pointer --grab focus
+
+alt + button{1-3}
+	bspc pointer --grab {move,resize_side,resize_corner}
+
+alt + @button{1-3}
+	bspc pointer --ungrab
+
+alt + ctrl + shift + q
+	bspc  window -k
+
+#  move win
+ctrl + {Left,Down,Up,Right}
+	bspc window -s {left,down,up,right}
+
+#select win
+alt + {Left,Down,Up,Right}
+	bspc window -f {prev, prev, next, next}
+
+# Focus or move window to desktops
+
+alt + {_,shift + }{1,2,3,5,6}
+    bspc {desktop -f,window -d} ^{1,2,3,4,5}
+
+
+# Change window gap
+#alt + {ö,ç}
+#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 
+#))
+
+
+XF86AudioRaiseVolume
+	/usr/bin/pulseaudio-ctl up
+
+XF86AudioLowerVolume
+	/usr/bin/pulseaudio-ctl down
+
+XF86AudioMute	
+	/usr/bin/pulseaudio-ctl mute	
+
+XF86AudioPlay
+	mocp -s
+
+XF86AudioNext
+	mocp -f
+	
+XF86AudioPrev
+	mocp -r
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
+	
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+Menu
+	urxvtc
+
+alt + r
+	urxvtc -depth 0 -e ranger
+
+ctrl + Menu
+	google-chrome-stable
+
+alt + Menu
+	conkeror
+
+alt + m
+	xfce4-terminal -e mocp
+	
+ctrl + alt + p
+	transmission-gtk        
+
+Print
+	scrot -q 100
+
+alt + F1
+	mouse

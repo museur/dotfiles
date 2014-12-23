@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc control --subscribe > "$PANEL_FIFO" &
+
+. /home/gulver/.config/bspwm/bar/bar_colors
+
+cat "$PANEL_FIFO" | /home/gulver/.config/bspwm/bar/bar_conf | bar -g 200x20x1 -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -f heb6x13
+
+
+#-xos4-terminus-medium-r-normal--18-180-72-72-c-100-iso10646-1
+
+
+wait 

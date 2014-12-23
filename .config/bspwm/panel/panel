@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FG='#D14A1D'
+BG='#232323'
+FONT='-*-terminus-*-r-normal-*-*-80-*-*-*-*-iso8859-*'
+
+
+conky | dzen2 -ta right -sa right -e - -h '20' -fg $FG -bg $BG -fn $FONT &
+
+sleep 3 &&
+
+/home/gulver/.config/bspwm/bar/bar &

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+
+bspc monitor -d I II III V VI &
+
+
+desktop_config() {
+	bspc config $1 $2
+	for M in $(bspc query -M); do
+		bspc config -m $M $1 $2
+	done
+}
+
+
+desktop_config border_width		2
+desktop_config window_gap		120
+bspc config top_padding 		20
+bspc config split_ratio         	0.52
+bspc config borderless_monocle  	true
+bspc config gapless_monocle     	true
+bspc config -d II window_gap		0
+#bspc config -d MUSE window_gap		0
+#bspc config -d PTP window_gap		0
+bspc config normal_border_color		"#5C7780"
+bspc config active_border_color		"#662509"
+bspc config focused_border_color	"#B34A1D"
+bspc rule -a "Conkeror"			desktop=II
+bspc rule -a "Google-chrome-stable"	desktop=II
+bspc rule -a "Xfce4-terminal" 		desktop=III
+bspc rule -a "ProjectM-pulseaudio"	desktop=III
+conkeror &
+xfce4-terminal -e mocp &
+#projectM-pulseaudio &
+./.scripts/keychanges &
+urxvtc  &
+urxvtc -e ranger &
+urxvtc -e weechat-curses &
+/home/gulver/.config/bspwm/panel/panel

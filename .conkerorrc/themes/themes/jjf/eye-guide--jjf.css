@@ -1,0 +1,15 @@
+
+@namespace url("http://www.w3.org/1999/xhtml");
+
+#__conkeror_eye_guide {
+  background: rgba(0,0,0,.1);
+  opacity: 1.0;
+}
+
+#__conkeror_eye_guide.__conkeror_eye_guide_scroll_down {
+  border-top: 1px dashed black;
+}
+
+#__conkeror_eye_guide.__conkeror_eye_guide_scroll_up {
+  border-bottom: 1px dashed black;
+}
